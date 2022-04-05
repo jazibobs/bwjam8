@@ -11,8 +11,9 @@ config_version=4
 [application]
 
 config/name="Tonalities"
+run/main_scene="res://Scenes/Game.tscn"
 boot_splash/image="res://Icons/jgr-splash.png"
-boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [display]
@@ -29,9 +30,18 @@ window/stretch/aspect="keep"
 
 theme/use_hidpi=true
 
+[input]
+
+ui_touch={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+
 [input_devices]
 
 buffering/agile_event_flushing=true
+pointing/emulate_touch_from_mouse=true
 
 [locale]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/jgr-splash.png-5c8dcffe33fdfe86b197cd29f74370bf.stex"
+path="res://.import/touch-basic.png-cfa25b27d743153aa00202225e4600d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/jgr-splash.png"
-dest_files=[ "res://.import/jgr-splash.png-5c8dcffe33fdfe86b197cd29f74370bf.stex" ]
+source_file="res://Sprites/touch-basic.png"
+dest_files=[ "res://.import/touch-basic.png-cfa25b27d743153aa00202225e4600d9.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

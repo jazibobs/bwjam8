@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/reey/Reey-Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/Credits.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/touch-basic.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 64
+font_data = ExtResource( 1 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 960.0, 911.0 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 120.0 ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditText" type="RichTextLabel" parent="."]
+margin_left = 247.0
+margin_top = 809.0
+margin_right = 1020.0
+margin_bottom = 938.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 4 )
+text = "created by jared rigby 2022
+black and white jam #8"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="TouchScreenButton" parent="."]
+position = Vector2( 1600, 860 )
+normal = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BackBtn"]
+margin_right = 206.0
+margin_bottom = 100.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "go back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
