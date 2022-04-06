@@ -1,4 +1,4 @@
-# Black and White jam #8 - Looping
+# Black and White jam #8 - Loop
 
 ## Credits
 
