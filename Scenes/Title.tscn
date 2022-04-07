@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Title.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFontData" id=4]
 font_path = "res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf"
@@ -11,7 +10,6 @@ size = 164
 font_data = SubResource( 4 )
 
 [node name="Title" type="Control"]
-script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 120.0, 960.0, 240.0 ],
 "_edit_use_anchors_": false,

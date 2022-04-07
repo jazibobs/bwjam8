@@ -18,8 +18,8 @@ var bg_track_2
 func _ready():
 	randomize()
 	
-	var bg_track_1 = bg_tracks[rand_range(0, 7)]
-	var bg_track_2 = bg_tracks[rand_range(0, 7)]
+	bg_track_1 = bg_tracks[rand_range(0, 7)]
+	bg_track_2 = bg_tracks[rand_range(0, 7)]
 	
 	while bg_track_1 == bg_track_2:
 		bg_track_2 = bg_tracks[rand_range(0, 7)]

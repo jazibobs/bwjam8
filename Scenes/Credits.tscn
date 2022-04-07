@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Scripts/Credits.gd" type="Script" id=3]
 [ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=5]
 
 [sub_resource type="DynamicFont" id=4]
@@ -11,7 +10,6 @@ font_data = ExtResource( 2 )
 [node name="Credits" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 960.0, 911.0 ],
 "_edit_use_anchors_": false,
