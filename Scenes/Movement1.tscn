@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Movement1.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Block.tscn" type="PackedScene" id=2]
 
 [node name="Exp1" type="Node2D"]
 script = ExtResource( 1 )
@@ -14,8 +15,30 @@ __meta__ = {
 }
 
 [node name="BallSpawn" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 4.0
 
 [node name="AllBalls" type="Node" parent="."]
+
+[node name="AllBlocks" type="Node" parent="."]
+
+[node name="Block" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 375, 847 )
+rotation = 0.236633
+
+[node name="Block2" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 563, 340 )
+rotation = -0.404081
+
+[node name="Block3" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 1403, 309 )
+rotation = 0.232822
+
+[node name="Block4" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 1510, 889 )
+rotation = 0.193571
+
+[node name="Block5" parent="AllBlocks" instance=ExtResource( 2 )]
+position = Vector2( 956, 693 )
+rotation = -0.692658
 
 [connection signal="timeout" from="BallSpawn" to="." method="_on_BallSpawn_timeout"]
