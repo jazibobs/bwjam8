@@ -1,5 +1,6 @@
 extends RigidBody2D
 
+
 func _ready():
 	# Set up physics
 	set_physics_process(true) 
@@ -11,5 +12,6 @@ func _ready():
 	
 	self.position.x = starting_x
 
-func _on_PhysicsBody_body_entered(body):
-	pass # Replace with function body.
+
+func _on_PhysicsBody_body_entered(_body):
+	$AudioStreamPlayer2D.play()

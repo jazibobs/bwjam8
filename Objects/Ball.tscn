@@ -1,17 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
+[ext_resource path="res://Audio/Ball/Cymatics x S1 - Percussion 5.wav" type="AudioStream" id=1]
 [ext_resource path="res://Sprites/ball.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/Ball.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 99.5038
+radius = 100.0
 
 [node name="PhysicsBody" type="RigidBody2D"]
-position = Vector2( 960, -200 )
-mass = 10.0
+position = Vector2( 960, -300 )
+mass = 50.0
 physics_material_override = SubResource( 2 )
+contacts_reported = 1
+contact_monitor = true
 linear_velocity = Vector2( 0, 10 )
 linear_damp = 0.0
 script = ExtResource( 3 )
@@ -20,6 +23,14 @@ script = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -1 )
 texture = ExtResource( 2 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -18.353
+pitch_scale = 0.7
+attenuation = 0.307786
+bus = "Balls"
 
 [connection signal="body_entered" from="." to="." method="_on_PhysicsBody_body_entered"]
