@@ -17,7 +17,11 @@ func _ready():
 
 func _on_PhysicsBody_body_entered(body):
 	$AudioStreamPlayer2D.play()
-	body.toggle_active()
+	
+	# get_node("/root/Game/PlayerCamera").start_shake()
+	
+	if body.collision_layer == 2:
+		body.toggle_active()
 
 
 func _input(event):
@@ -30,3 +34,9 @@ func _input(event):
 	if Input.is_action_just_released("ui_touch"):
 		mode = RigidBody2D.MODE_RIGID
 		linear_velocity = temp_linear_vel
+		$Cooldown.start()
+
+
+func _on_Cooldown_timeout():
+	$CollisionShape2D.disabled = false
+	$Sprite.modulate = Color(1,1,1)

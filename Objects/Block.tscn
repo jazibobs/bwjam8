@@ -11,6 +11,7 @@ extents = Vector2( 100, 100 )
 
 [node name="Block" type="RigidBody2D"]
 pause_mode = 2
+collision_layer = 2
 input_pickable = true
 mode = 1
 physics_material_override = SubResource( 2 )

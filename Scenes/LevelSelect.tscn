@@ -11,15 +11,7 @@ __meta__ = {
 "_edit_vertical_guides_": [ 120.0, 240.0 ]
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Level1Btn" parent="." instance=ExtResource( 1 )]
 position = Vector2( 239, 240 )
 button_text = "level 1"
-next_scene_res = "res://Scenes/Movement1.tscn"
+next_scene_res = "res://Scenes/Levels/Level1.tscn"

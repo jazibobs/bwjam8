@@ -12,9 +12,9 @@ config_version=4
 
 config/name="Tonalities"
 run/main_scene="res://Scenes/Game.tscn"
-boot_splash/image="res://Icons/jgr-splash.png"
+boot_splash/image="res://Sprites/LogoSplash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
-config/icon="res://icon.png"
+config/icon="res://Icons/jgr-splash.png"
 
 [autoload]
 
@@ -28,7 +28,7 @@ window/size/test_width=960
 window/size/test_height=540
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
-window/stretch/aspect="keep"
+window/stretch/aspect="keep_width"
 
 [editor]
 
@@ -51,6 +51,11 @@ ui_touch={
 buffering/agile_event_flushing=true
 pointing/emulate_touch_from_mouse=true
 
+[layer_names]
+
+2d_physics/layer_1="Obstacles"
+2d_physics/layer_2="Blocks"
+
 [locale]
 
 fallback="en_GB"
@@ -58,10 +63,11 @@ fallback="en_GB"
 [physics]
 
 common/enable_pause_aware_picking=true
-2d/default_gravity=300
+2d/default_gravity=784
 
 [rendering]
 
 2d/options/use_nvidia_rect_flicker_workaround=true
 2d/snapping/use_gpu_pixel_snap=true
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

@@ -16,14 +16,6 @@ __meta__ = {
 "_edit_vertical_guides_": [ 120.0 ]
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CreditText" type="RichTextLabel" parent="."]
 margin_left = 247.0
 margin_top = 809.0
