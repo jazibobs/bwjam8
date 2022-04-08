@@ -10,6 +10,7 @@
 extents = Vector2( 100, 100 )
 
 [node name="Block" type="RigidBody2D"]
+input_pickable = true
 mode = 1
 physics_material_override = SubResource( 2 )
 contacts_reported = 10
@@ -27,3 +28,5 @@ shape = SubResource( 1 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
+
+[connection signal="input_event" from="." to="." method="_on_Block_input_event"]

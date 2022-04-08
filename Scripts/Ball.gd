@@ -13,4 +13,4 @@ func _ready():
 
 func _on_PhysicsBody_body_entered(body):
 	$AudioStreamPlayer2D.play()
-	body.get_node("Sprite").modulate = Color(1,1,1)
+	body.set_active()

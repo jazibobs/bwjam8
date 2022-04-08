@@ -9,4 +9,4 @@ func _ready():
 	$RichTextLabel.text = button_text
 
 func _on_TouchButton_pressed():
-	get_node("/root/Game/SceneManager").change_scene(get_node("."), next_scene_res)
+	get_node("/root/Game/SceneManager").change_scene(get_parent(), next_scene_res)

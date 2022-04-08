@@ -11,6 +11,6 @@ func change_scene(old_scene, new_scene):
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "scene_fade_out":
 		current_scene.queue_free()
-		
+		print(current_scene)
 		get_node("/root/Game/ActiveScene").add_child(next_scene)
 		$AnimationPlayer.play("scene_fade_in")
