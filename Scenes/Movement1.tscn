@@ -24,7 +24,7 @@ position = Vector2( 375, 847 )
 rotation = 0.236633
 
 [node name="Block2" parent="AllBlocks" instance=ExtResource( 2 )]
-position = Vector2( 563, 340 )
+position = Vector2( 537, 468 )
 rotation = -0.404081
 
 [node name="Block3" parent="AllBlocks" instance=ExtResource( 2 )]
@@ -36,5 +36,5 @@ position = Vector2( 1510, 889 )
 rotation = 0.193571
 
 [node name="Block5" parent="AllBlocks" instance=ExtResource( 2 )]
-position = Vector2( 956, 693 )
+position = Vector2( 1011, 429 )
 rotation = -0.692658

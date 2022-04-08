@@ -19,13 +19,12 @@ glow_high_quality = true
 [node name="Title" parent="ActiveScene" instance=ExtResource( 2 )]
 
 [node name="SceneManager" parent="." instance=ExtResource( 1 )]
-visible = false
-mouse_filter = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
 [node name="DebugInfo" type="RichTextLabel" parent="."]
+visible = false
 margin_right = 1907.0
 margin_bottom = 41.0
 rect_scale = Vector2( 1.5, 1.5 )
