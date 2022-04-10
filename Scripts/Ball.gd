@@ -18,7 +18,7 @@ func _ready():
 func _on_PhysicsBody_body_entered(body):
 	$AudioStreamPlayer2D.play()
 	
-	# get_node("/root/Game/PlayerCamera").start_shake()
+	get_node("/root/Game/PlayerCamera").start_shake()
 	
 	if body.collision_layer == 2:
 		body.toggle_active()

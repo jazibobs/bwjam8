@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
+[ext_resource path="res://Objects/SocialButton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Icons/github-brands.svg" type="Texture" id=3]
+[ext_resource path="res://Icons/itch-io-brands.svg" type="Texture" id=4]
 [ext_resource path="res://Objects/TouchButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Icons/twitter-brands.svg" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=4]
 size = 48
@@ -11,9 +15,9 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
-"_edit_horizontal_guides_": [ 960.0, 911.0 ],
+"_edit_horizontal_guides_": [ 960.0, 911.0, 120.0 ],
 "_edit_use_anchors_": false,
-"_edit_vertical_guides_": [ 120.0 ]
+"_edit_vertical_guides_": [ 120.0, 240.0, 360.0, 480.0, 600.0 ]
 }
 
 [node name="CreditText" type="RichTextLabel" parent="."]
@@ -33,3 +37,20 @@ __meta__ = {
 position = Vector2( 1599, 859 )
 button_text = "go back"
 next_scene_res = "res://Scenes/Title.tscn"
+
+[node name="GitHubButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 121 )
+scale = Vector2( 0.239919, 0.239919 )
+normal = ExtResource( 3 )
+
+[node name="ItchButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 479, 121 )
+scale = Vector2( 0.239919, 0.239919 )
+normal = ExtResource( 4 )
+url = "https://jazibobs.itch.io/"
+
+[node name="TwitterButton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 720, 121 )
+scale = Vector2( 0.239919, 0.239919 )
+normal = ExtResource( 6 )
+url = "https://twitter.com/jazibobs"
