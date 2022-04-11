@@ -59,10 +59,19 @@ func _physics_process(delta):
 		else:
 			rigidbody_vector = (input_pos - self.position).normalized()
 			self.set_linear_velocity(rigidbody_vector * RIGIDBODY_SPEED * input_distance * delta)
+		
+		reset_all_blocks()
 	else:
 		mode = RigidBody2D.MODE_STATIC
 		transform.rotated(set_rotation)
 		$CollisionShape2D.disabled = false
+
+
+func reset_all_blocks():
+	# print("Resetting!")
+	for block in get_parent().get_children():
+		block.set_inactive()
+
 
 func toggle_active():
 	if is_active:
