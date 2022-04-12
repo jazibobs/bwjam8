@@ -10,11 +10,15 @@ func _ready():
 
 
 func _process(_delta):
+	if $ActiveScene.get_child(0).name == "Title" && timer_state == t_states.INACTIVE:
+		timer = 0.0
+		$TimerText.text = "00:00.0"
+	
 	if $ActiveScene.get_child(0).name == "Level1" && timer_state == t_states.INACTIVE:
 		$Timer.start()
 		timer_state = t_states.ACTIVE
 	
-	if $ActiveScene.get_child(0).name == "EndScreen":
+	if $ActiveScene.get_child(0).name == "EndScene" && timer_state == t_states.ACTIVE:
 		$Timer.stop()
 		timer_state = t_states.INACTIVE
 

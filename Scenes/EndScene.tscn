@@ -20,8 +20,8 @@ __meta__ = {
 
 [node name="ThanksText" type="RichTextLabel" parent="."]
 margin_left = 247.0
-margin_top = 622.0
-margin_right = 1020.0
+margin_top = 562.0
+margin_right = 1081.0
 margin_bottom = 938.0
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 custom_fonts/normal_font = SubResource( 1 )

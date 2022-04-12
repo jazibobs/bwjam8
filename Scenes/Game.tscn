@@ -8,6 +8,10 @@
 [ext_resource path="res://Fonts/abhaya-libre/AbhayaLibre-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=7]
 
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 6 )
+
 [sub_resource type="Environment" id=1]
 background_mode = 4
 glow_enabled = true
@@ -15,10 +19,6 @@ glow_intensity = 0.4
 glow_bloom = 0.15
 glow_blend_mode = 0
 glow_high_quality = true
-
-[sub_resource type="DynamicFont" id=2]
-size = 48
-font_data = ExtResource( 6 )
 
 [node name="Game" type="Node"]
 script = ExtResource( 7 )
@@ -30,6 +30,18 @@ __meta__ = {
 [node name="ActiveScene" type="Node" parent="."]
 
 [node name="Title" parent="ActiveScene" instance=ExtResource( 2 )]
+
+[node name="TimerText" type="RichTextLabel" parent="."]
+margin_left = 1644.0
+margin_top = 120.0
+margin_right = 1799.0
+margin_bottom = 190.0
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+custom_fonts/normal_font = SubResource( 2 )
+text = "00:00.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="SceneManager" parent="." instance=ExtResource( 1 )]
 
@@ -65,18 +77,6 @@ script = ExtResource( 5 )
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
 wait_time = 0.1
-
-[node name="TimerText" type="RichTextLabel" parent="."]
-margin_left = 1644.0
-margin_top = 120.0
-margin_right = 1799.0
-margin_bottom = 190.0
-custom_colors/default_color = Color( 1, 1, 1, 1 )
-custom_fonts/normal_font = SubResource( 2 )
-text = "00:00.0"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [connection signal="timeout" from="PlayerCamera/Frequency" to="PlayerCamera" method="_on_ShakeTimer_timeout"]
 [connection signal="timeout" from="PlayerCamera/Duration" to="PlayerCamera" method="_on_Duration_timeout"]
