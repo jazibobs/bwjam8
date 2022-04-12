@@ -19,10 +19,18 @@ func _process(_delta):
 	for ball in $AllBalls.get_children():
 		if ball.position.y > 1800 or ball.position.x < -500 or ball.position.x > 2320:
 			if check_win() and current_state == level_states.PLAY:
-				get_node("/root/Game/SceneManager").change_scene(
-					get_node("."), "res://Scenes/Levels/Level" + str(int(current_level) + 1) + ".tscn")
-				current_state = level_states.COMPLETE
-				get_node("/root/Game/LevelComplete").play()
+				
+				if int(current_level) == 5:
+					get_node("/root/Game/SceneManager").change_scene(
+						get_node("."), "res://Scenes/EndScene.tscn")
+					current_state = level_states.COMPLETE
+					get_node("/root/Game/LevelComplete").play()
+				else:
+					get_node("/root/Game/SceneManager").change_scene(
+						get_node("."), "res://Scenes/Levels/Level" + str(int(current_level) + 1) + ".tscn")
+					current_state = level_states.COMPLETE
+					get_node("/root/Game/LevelComplete").play()
+				
 			else:
 				ball.queue_free()
 				spawn_new_ball()

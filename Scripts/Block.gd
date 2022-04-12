@@ -68,7 +68,6 @@ func _physics_process(delta):
 
 
 func reset_all_blocks():
-	# print("Resetting!")
 	for block in get_parent().get_children():
 		block.set_inactive()
 

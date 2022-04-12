@@ -2,6 +2,7 @@ extends RigidBody2D
 
 
 var temp_linear_vel = Vector2()
+var destroyed = false
 
 func _ready():
 	# Set up physics
@@ -21,21 +22,21 @@ func _on_PhysicsBody_body_entered(body):
 	if get_tree().get_current_scene().name == "Game":
 		get_node("/root/Game/PlayerCamera").start_shake()
 	
-	if body.collision_layer == 2:
+	if body.collision_layer == 2 and not destroyed:
 		body.toggle_active()
 		
-	if body.collision_layer == 3:
+	if body.collision_layer == 4 and not destroyed:
 		destroy()
 
 
 func _input(event):
-	if Input.is_action_just_pressed("ui_touch"):
+	if Input.is_action_just_pressed("ui_touch") and not destroyed:
 		temp_linear_vel = linear_velocity
 		$CollisionShape2D.disabled = true
 		$Sprite.modulate = Color(0.4,0.4,0.4)
 		mode = RigidBody2D.MODE_STATIC
 	
-	if Input.is_action_just_released("ui_touch"):
+	if Input.is_action_just_released("ui_touch") and not destroyed:
 		mode = RigidBody2D.MODE_RIGID
 		linear_velocity = temp_linear_vel
 		$CollisionShape2D.disabled = false
@@ -43,4 +44,8 @@ func _input(event):
 
 
 func destroy():
-	pass
+	get_parent().get_parent().reset_all_blocks()
+	$Destroy.emitting = true
+	$CollisionShape2D.set_deferred("disabled", true)
+	destroyed = true
+	$Sprite.modulate = Color(0.2,0.2,0.2)

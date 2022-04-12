@@ -23,6 +23,7 @@ shader = SubResource( 2 )
 shader_param/amount = 3.0
 
 [node name="Bar" type="StaticBody2D"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
